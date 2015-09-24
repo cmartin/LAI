@@ -31,9 +31,9 @@ LAI_from_GF_at_angle <- function(
   rad_angle <- angle * 0.0174532925
 
   return(
-    - (
+    -(
       cos(rad_angle) / .5
-      ) * log (GF)
+      ) * log(GF)
   )
 }
 
@@ -57,6 +57,6 @@ crop_around_angle <- function(
   crop_bottom_pixel <- (crop_bottom_angle - bottom_angle) * pixel_degree_ratio
   e <- raster::extent(c(0,img@ncols,crop_bottom_pixel,crop_top_pixel) )
 
-  return (raster::crop(img,e))
+  return(raster::crop(img,e))
 
 }

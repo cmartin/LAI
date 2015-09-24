@@ -3,16 +3,16 @@ unimodal_threhsold_img <- function(path_to_file, crop = TRUE) {
   if (crop) {
     img <- crop_around_angle(raster::raster(path_to_file, band = 3))
   } else {
-    img <- raster::raster(path_to_file, band=3)
+    img <- raster::raster(path_to_file, band = 3)
   }
   values <- raster::getValues(img)
 
   DN_list <- 0:255
   DN_freq <- lapply(DN_list, function(x) {
-    sum(values == x, na.rm=TRUE)
+    sum(values == x, na.rm = TRUE)
   })
 
-  hst <- data.frame (
+  hst <- data.frame(
     DN = DN_list,
     freq = unlist(DN_freq)
   )
@@ -25,7 +25,7 @@ unimodal_threhsold_img <- function(path_to_file, crop = TRUE) {
   DN_L2 <- 55
   repeat {
     range_L <- (DN_L1 + 1):(DN_L2 - 1)
-    DN_max_L <- range_L [which.max(hst[hst$DN %in% range_L, "freq"])]
+    DN_max_L <- range_L[which.max(hst[hst$DN %in% range_L, "freq"])]
 
     # Is the criteria met?
     if (DN_L2 - DN_max_L >= 10) break;
@@ -40,7 +40,7 @@ unimodal_threhsold_img <- function(path_to_file, crop = TRUE) {
   DN_R2 <- 255
   repeat {
     range_R <- (DN_R1 + 1):(DN_R2 - 1)
-    DN_max_R <- range_R [which.max(hst[hst$DN %in% range_R, "freq"])]
+    DN_max_R <- range_R[which.max(hst[hst$DN %in% range_R, "freq"])]
 
     if (DN_max_R - DN_R1 >= 10) break;
     DN_R1 <- DN_R1 - 25
