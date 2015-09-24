@@ -65,11 +65,9 @@ unimodal_threhsold_img <- function(path_to_file, crop = TRUE) {
 
   m <- (0 - freq_max) / (first_empty - DN_max_L)
   b <- 0 - m * first_empty
-  #' hist(values, breaks=255)
-  #' abline(b,m)
+  # to debug : hist(values, breaks=255); abline(b,m)
   # Find point farthest from the slope
   # http://math.ucsd.edu/~wgarner/math4c/derivations/distance/distptline.htm
-  #' dist = abs(y1-m*x1-b) / sqrt(m^2+1)
   to_test <- DN_max_L:DN_max_R # Range of values to test
 
   # Left corner (i.e. inflection point)
@@ -94,7 +92,6 @@ unimodal_threhsold_img <- function(path_to_file, crop = TRUE) {
 
     m <- (0 - freq_max) / (first_empty - DN_max_R)
     b <- 0 - m * first_empty
-    #' abline(b,m)
 
     to_test <- DN_max_L:DN_max_R
     DN_uc <- to_test[which.min(
