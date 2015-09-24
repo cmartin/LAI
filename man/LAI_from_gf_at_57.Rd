@@ -16,6 +16,6 @@ The calculated LAI value.
 Calculate leaf area index (LAI) from an image in a band around 57.5 degrees.
 }
 \examples{
-LAI_from_gf_at_57("IMG_0005.JPG")
+LAI_from_gf_at_57(system.file("extdata", "IMG_7595.JPG", package = "LAI"))
 }
 

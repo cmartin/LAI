@@ -1,16 +1,16 @@
 #' Calculate leaf area index (LAI) from an image in a band around 57.5 degrees.
-#' 
+#'
 #' @param image_path Path to the image to analyze.
 #' @return The calculated LAI value.
 #' @examples
-#' LAI_from_gf_at_57("IMG_0005.JPG")
+#' LAI_from_gf_at_57(system.file("extdata", "IMG_7595.JPG", package = "LAI"))
 #' @export
 LAI_from_gf_at_57 <- function(image_path) {
   LAI_from_GF_at_angle(
     calculate_GF(
       unimodal_threhsold_img(image_path)
       )
-    ) 
+    )
 }
 
 calculate_GF <- function(binary_img) {
