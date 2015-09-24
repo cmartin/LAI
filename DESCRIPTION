@@ -1,9 +1,10 @@
 Package: LAI
-Type: Package
-Title: What the package does (short line)
-Version: 1.0
-Date: 2015-09-24
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Title: Calculate indirect Leaf Area Index (LAI) from images
+Version: 0.0.0.9000
+Authors@R: person("Charles", "Martin", email = "martin.charles@gmail.com",
+                  role = c("aut", "cre"))
+Description: What the package does (one paragraph)
+Depends: R (>= 3.2.0)
+License: GPL-3
+LazyData: true
+Imports: raster
