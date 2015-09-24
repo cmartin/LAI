@@ -6,14 +6,19 @@
 #' LAI_from_gf_at_57(system.file("extdata", "IMG_7595.JPG", package = "LAI"))
 #' @export
 LAI_from_gf_at_57 <- function(image_path) {
-  LAI_from_GF_at_angle(
-    calculate_GF(
-      unimodal_threhsold_img(image_path)
+  LAI_from_GF(
+    GF(
+      unimodal_threhsold(
+        crop_around_angle(
+          raster::raster(image_path, band = 3) # only the blue band is necessary for calculations
+        )
       )
     )
+  )
 }
 
-calculate_GF <- function(binary_img) {
+#' Calculate gap fraction (GF) from a binary image
+GF <- function(binary_img) {
   freqs <- as.data.frame(raster::freq(binary_img))
   if (nrow(freqs) < 2) {
     1
@@ -24,7 +29,8 @@ calculate_GF <- function(binary_img) {
   }
 }
 
-LAI_from_GF_at_angle <- function(
+#' Calculate LAI from a gap fraction (GF) ratio
+LAI_from_GF <- function(
   GF,
   angle=57.5 # degrees
 ) {
@@ -37,6 +43,7 @@ LAI_from_GF_at_angle <- function(
   )
 }
 
+#' Crop a band at a particular angle from a raster image
 crop_around_angle <- function(
   img, # raster object
   camera_horiz_FOV = 73.7, # degrees

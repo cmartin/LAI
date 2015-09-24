@@ -1,10 +1,5 @@
-unimodal_threhsold_img <- function(path_to_file, crop = TRUE) {
-  # read only the blue band
-  if (crop) {
-    img <- crop_around_angle(raster::raster(path_to_file, band = 3))
-  } else {
-    img <- raster::raster(path_to_file, band = 3)
-  }
+#' Binarize a vegetation image between sky and vegetation
+unimodal_threhsold <- function(img) {
   values <- raster::getValues(img)
 
   DN_list <- 0:255
@@ -65,7 +60,9 @@ unimodal_threhsold_img <- function(path_to_file, crop = TRUE) {
 
   m <- (0 - freq_max) / (first_empty - DN_max_L)
   b <- 0 - m * first_empty
-  # to debug : hist(values, breaks=255); abline(b,m)
+
+  # to debug visually : hist(values, breaks=255); abline(b,m)
+
   # Find point farthest from the slope
   # http://math.ucsd.edu/~wgarner/math4c/derivations/distance/distptline.htm
   to_test <- DN_max_L:DN_max_R # Range of values to test
