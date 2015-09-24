@@ -10,7 +10,7 @@ LAI_from_gf_at_57(image_path)
 \item{image_path}{Path to the image to analyze.}
 }
 \value{
-The sum of \code{x} and \code{y}.
+The calculated LAI value.
 }
 \description{
 Calculate leaf area index (LAI) from an image in a band around 57.5 degrees.
