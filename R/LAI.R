@@ -1,10 +1,10 @@
 #' Calculate leaf area index (LAI) from an image in a band around 57.5 degrees.
 #'
 #' This functions first seperates sky from vegetation pixels using
-#' \code{\link{unimodal_thresholding}}. Based on the
+#' \code{\link{unimodal_threshold}}. Based on the
 #' focal angle and camera field of view provided, it then extracts a narrow
-#' band around a 57.5 degrees zenith angle (Baret et al. 2010). The gap
-#' fraction of this band is then used to
+#' band around a 57.5 degrees zenith angle (Baret et al. 2010). The
+#' \code{\link{gap_fraction}} of this band is then used to
 #' calculated an indirect LAI value (e.g. Confalonieri et al. 2013).
 #'
 #' @param image_path Path to the image to analyze.
@@ -34,7 +34,7 @@ LAI_from_gf_at_57 <- function(image_path,
                               focal_angle = 45
                               ) {
   LAI_from_GF(
-    GF(
+    gap_fraction(
       unimodal_threshold(
         crop_around_angle(
           # only the blue band is necessary for calculations
@@ -47,8 +47,20 @@ LAI_from_gf_at_57 <- function(image_path,
   )
 }
 
-#' Calculate gap fraction (GF) from a binary image
-GF <- function(binary_img) {
+#' Calculates the gap fraction (ratio of open canopy) from a binary image
+#'
+#' @param binary_img A binarized raster object, where sky pixels are 0 and
+#' vegetation pixels are 1
+#' @return The gap fraction ( number of sky pixels / total number of pixels )
+#' @examples
+#' library(raster)
+#' gap_fraction(
+#'  unimodal_threshold (
+#'    raster(system.file("extdata", "IMG_0005.JPG", package = "LAI"), band = 3)
+#'  )
+#' )
+#' @export
+gap_fraction <- function(binary_img) {
   freqs <- as.data.frame(raster::freq(binary_img))
   if (nrow(freqs) < 2) {
     1
