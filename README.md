@@ -14,10 +14,9 @@ devtools::install_github("cmartin/LAI")
 ```{r}
 library(LAI)
 library(raster)
-
-# See the image
 test_image <-  system.file("extdata", "IMG_7595.JPG", package = "LAI")
 
+# See the image
 plotRGB(
   brick(test_image),
   asp=1
