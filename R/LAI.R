@@ -1,9 +1,10 @@
 #' Calculate leaf area index (LAI) from an image in a band around 57.5 degrees.
 #'
-#' This functions first seperates sky from vegetation pixels using the
-#' histogram-shape method described in Macfarlane 2011. Based on the
+#' This functions first seperates sky from vegetation pixels using
+#' \code{\link{unimodal_thresholding}}. Based on the
 #' focal angle and camera field of view provided, it then extracts a narrow
-#' band around a 57.5 degrees zenith angle (Baret et al. 2010). The gap fraction of this band is then used to
+#' band around a 57.5 degrees zenith angle (Baret et al. 2010). The gap
+#' fraction of this band is then used to
 #' calculated an indirect LAI value (e.g. Confalonieri et al. 2013).
 #'
 #' @param image_path Path to the image to analyze.
@@ -27,10 +28,6 @@
 #' index using a smartphone. Trueness and precision determination and
 #' comparison with other indirect methods. Computers and Electronics in
 #' Agriculture, 96, 67–74.
-#'
-#'   Macfarlane, C. (2011). Classification method of mixed pixels does not affect
-#' canopy metrics from digital images of forest overstorey. Agricultural and
-#' Forest Meteorology, 151(7), 833–840.
 #' @export
 LAI_from_gf_at_57 <- function(image_path,
                               camera_horiz_FOV = 73.7,
@@ -38,7 +35,7 @@ LAI_from_gf_at_57 <- function(image_path,
                               ) {
   LAI_from_GF(
     GF(
-      unimodal_threhsold(
+      unimodal_threshold(
         crop_around_angle(
           # only the blue band is necessary for calculations
           raster::raster(image_path, band = 3),

@@ -18,10 +18,11 @@ horizontal, 90 is vertical}
 The calculated LAI value.
 }
 \description{
-This functions first seperates sky from vegetation pixels using the
-histogram-shape method described in Macfarlane 2011. Based on the
+This functions first seperates sky from vegetation pixels using
+\code{\link{unimodal_thresholding}}. Based on the
 focal angle and camera field of view provided, it then extracts a narrow
-band around a 57.5 degrees zenith angle (Baret et al. 2010). The gap fraction of this band is then used to
+band around a 57.5 degrees zenith angle (Baret et al. 2010). The gap
+fraction of this band is then used to
 calculated an indirect LAI value (e.g. Confalonieri et al. 2013).
 }
 \examples{
@@ -41,9 +42,5 @@ M., … Acutis, M. (2013). Development of an app for estimating leaf area
 index using a smartphone. Trueness and precision determination and
 comparison with other indirect methods. Computers and Electronics in
 Agriculture, 96, 67–74.
-
-  Macfarlane, C. (2011). Classification method of mixed pixels does not affect
-canopy metrics from digital images of forest overstorey. Agricultural and
-Forest Meteorology, 151(7), 833–840.
 }
 

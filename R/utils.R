@@ -1,5 +1,33 @@
-#' Binarize a vegetation image between sky and vegetation
-unimodal_threhsold <- function(img) {
+#' Binarize an image between sky and vegetation pixels
+#'
+#' This functions applies the histogram-based unimodal thresholding method
+#'
+#' @param img A raster object with a single (blue) band.
+#' @return A raster object, where sky pixels are 0 and vegetation pixels are 1.
+#' @examples
+#' library(raster)
+#' file_path = system.file("extdata", "IMG_7595.JPG", package = "LAI")
+#'
+#' # View the original image
+#' plotRGB(
+#'   brick(file_path),
+#'   asp=1
+#' )
+#'
+#' # View the binarized image
+#' plot(
+#'   unimodal_threshold (
+#'     raster(file_path, band = 3)
+#'   )
+#'   ,useRaster=TRUE
+#'   ,asp=1
+#' )
+#' @references
+#'   Macfarlane, C. (2011). Classification method of mixed pixels does not affect
+#' canopy metrics from digital images of forest overstorey. Agricultural and
+#' Forest Meteorology, 151(7), 833–840.
+#' @export
+unimodal_threshold <- function(img) {
   values <- raster::getValues(img)
 
   DN_list <- 0:255
