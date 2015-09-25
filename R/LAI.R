@@ -3,8 +3,8 @@
 #' This functions first seperates sky from vegetation pixels using the
 #' histogram-shape method described in Macfarlane 2011. Based on the
 #' focal angle and camera field of view provided, it then extracts a narrow
-#' band around 57.5 degrees (Baret et al. 2010). The gap fraction of this band is then used to
-#' calculated an indirect LAI value (Confalonieri et al. 2013).
+#' band around a 57.5 degrees zenith angle (Baret et al. 2010). The gap fraction of this band is then used to
+#' calculated an indirect LAI value (e.g. Confalonieri et al. 2013).
 #'
 #' @param image_path Path to the image to analyze.
 #' @param camera_horiz_FOV Camera horizontal field of view (in degrees)
@@ -83,8 +83,8 @@ crop_around_angle <- function(
   focal_angle, # degrees angle at which the camera was pointing (degrees)
 
   # crop box
-  crop_top_angle = 57.5 + 5,
-  crop_bottom_angle = 57.5 - 5
+  crop_top_angle = (90 - 57.5) + 5, # our angles are calculated from the ground
+  crop_bottom_angle = (90 - 57.5) - 5
 ) {
 
   # pixel/degree ratio

@@ -19,10 +19,10 @@ The calculated LAI value.
 }
 \description{
 This functions first seperates sky from vegetation pixels using the
-histogram-shape method described in Macfarlane et al. 2011. Based on the
-focal angle and camera field of view provieded, it then extracts a narrow
-band around 57.5 degrees (Baret et al. 2010). The gap fraction of this band is then used to
-calculated an indirect LAI value (Confalonieri et al. 2013).
+histogram-shape method described in Macfarlane 2011. Based on the
+focal angle and camera field of view provided, it then extracts a narrow
+band around a 57.5 degrees zenith angle (Baret et al. 2010). The gap fraction of this band is then used to
+calculated an indirect LAI value (e.g. Confalonieri et al. 2013).
 }
 \examples{
 LAI_from_gf_at_57(

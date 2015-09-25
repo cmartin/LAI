@@ -4,8 +4,8 @@
 \alias{crop_around_angle}
 \title{Crop a band at a particular angle from a raster image}
 \usage{
-crop_around_angle(img, camera_horiz_FOV, focal_angle, crop_top_angle = 57.5 +
-  5, crop_bottom_angle = 57.5 - 5)
+crop_around_angle(img, camera_horiz_FOV, focal_angle, crop_top_angle = (90 -
+  57.5) + 5, crop_bottom_angle = (90 - 57.5) - 5)
 }
 \description{
 Crop a band at a particular angle from a raster image
