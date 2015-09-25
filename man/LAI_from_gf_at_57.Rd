@@ -33,14 +33,14 @@ LAI_from_gf_at_57(
 \references{
 Baret, F., de Solan, B., Lopez-Lozano, R., Ma, K., & Weiss, M. (2010).
 GAI estimates of row crops from downward looking digital photos taken
-perpendicular to rows at 57.5° zenith angle: Theoretical considerations
+perpendicular to rows at 57.5 zenith angle: Theoretical considerations
 based on 3D architecture models and application to wheat crops.
-Agricultural and Forest Meteorology, 150(11), 1393–1401.
+Agricultural and Forest Meteorology, 150(11), 1393-1401.
 
   Confalonieri, R., Foi, M., Casa, R., Aquaro, S., Tona, E., Peterle,
-M., … Acutis, M. (2013). Development of an app for estimating leaf area
+M., ... Acutis, M. (2013). Development of an app for estimating leaf area
 index using a smartphone. Trueness and precision determination and
 comparison with other indirect methods. Computers and Electronics in
-Agriculture, 96, 67–74.
+Agriculture, 96, 67-74.
 }
 

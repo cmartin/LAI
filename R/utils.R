@@ -25,7 +25,7 @@
 #' @references
 #'   Macfarlane, C. (2011). Classification method of mixed pixels does not affect
 #' canopy metrics from digital images of forest overstorey. Agricultural and
-#' Forest Meteorology, 151(7), 833–840.
+#' Forest Meteorology, 151(7), 833-840.
 #' @export
 unimodal_threshold <- function(img) {
   values <- raster::getValues(img)
