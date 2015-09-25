@@ -4,10 +4,14 @@
 \alias{LAI_from_gf_at_57}
 \title{Calculate leaf area index (LAI) from an image in a band around 57.5 degrees.}
 \usage{
-LAI_from_gf_at_57(image_path)
+LAI_from_gf_at_57(image_path, camera_horiz_FOV = 73.7, focal_angle = 45)
 }
 \arguments{
 \item{image_path}{Path to the image to analyze.}
+
+\item{camera_horiz_FOV}{Camera horizontal field of view (in degrees)}
+
+\item{focal_angle}{Angle at which the camera was pointing (degrees). 0 is horizontal, 90 is vertical}
 }
 \value{
 The calculated LAI value.
@@ -16,6 +20,8 @@ The calculated LAI value.
 Calculate leaf area index (LAI) from an image in a band around 57.5 degrees.
 }
 \examples{
-LAI_from_gf_at_57(system.file("extdata", "IMG_7595.JPG", package = "LAI"))
+LAI_from_gf_at_57(
+ system.file("extdata", "IMG_7595.JPG", package = "LAI")
+)
 }
 

@@ -1,16 +1,26 @@
 #' Calculate leaf area index (LAI) from an image in a band around 57.5 degrees.
 #'
 #' @param image_path Path to the image to analyze.
+#' @param camera_horiz_FOV Camera horizontal field of view (in degrees)
+#' @param focal_angle Angle at which the camera was pointing (degrees). 0 is horizontal, 90 is vertical
 #' @return The calculated LAI value.
 #' @examples
-#' LAI_from_gf_at_57(system.file("extdata", "IMG_7595.JPG", package = "LAI"))
+#' LAI_from_gf_at_57(
+#'   system.file("extdata", "IMG_7595.JPG", package = "LAI")
+#' )
 #' @export
-LAI_from_gf_at_57 <- function(image_path) {
+LAI_from_gf_at_57 <- function(image_path,
+                              camera_horiz_FOV = 73.7,
+                              focal_angle = 45
+                              ) {
   LAI_from_GF(
     GF(
       unimodal_threhsold(
         crop_around_angle(
-          raster::raster(image_path, band = 3) # only the blue band is necessary for calculations
+          # only the blue band is necessary for calculations
+          raster::raster(image_path, band = 3),
+          camera_horiz_FOV = camera_horiz_FOV,
+          focal_angle = focal_angle
         )
       )
     )
@@ -46,9 +56,9 @@ LAI_from_GF <- function(
 #' Crop a band at a particular angle from a raster image
 crop_around_angle <- function(
   img, # raster object
-  camera_horiz_FOV = 73.7, # degrees
-  # angle at which the camera was pointing
-  focal_angle = 45, # degrees
+  camera_horiz_FOV, # degrees
+  focal_angle, # degrees angle at which the camera was pointing (degrees)
+
   # crop box
   crop_top_angle = 57.5 + 5,
   crop_bottom_angle = 57.5 - 5
