@@ -1,13 +1,36 @@
 #' Calculate leaf area index (LAI) from an image in a band around 57.5 degrees.
 #'
+#' This functions first seperates sky from vegetation pixels using the
+#' histogram-shape method described in Macfarlane 2011. Based on the
+#' focal angle and camera field of view provided, it then extracts a narrow
+#' band around 57.5 degrees (Baret et al. 2010). The gap fraction of this band is then used to
+#' calculated an indirect LAI value (Confalonieri et al. 2013).
+#'
 #' @param image_path Path to the image to analyze.
 #' @param camera_horiz_FOV Camera horizontal field of view (in degrees)
-#' @param focal_angle Angle at which the camera was pointing (degrees). 0 is horizontal, 90 is vertical
+#' @param focal_angle Angle at which the camera was pointing (degrees). 0 is
+#' horizontal, 90 is vertical
 #' @return The calculated LAI value.
 #' @examples
 #' LAI_from_gf_at_57(
 #'   system.file("extdata", "IMG_7595.JPG", package = "LAI")
 #' )
+#' @references
+#'   Baret, F., de Solan, B., Lopez-Lozano, R., Ma, K., & Weiss, M. (2010).
+#' GAI estimates of row crops from downward looking digital photos taken
+#' perpendicular to rows at 57.5° zenith angle: Theoretical considerations
+#' based on 3D architecture models and application to wheat crops.
+#' Agricultural and Forest Meteorology, 150(11), 1393–1401.
+#'
+#'   Confalonieri, R., Foi, M., Casa, R., Aquaro, S., Tona, E., Peterle,
+#' M., … Acutis, M. (2013). Development of an app for estimating leaf area
+#' index using a smartphone. Trueness and precision determination and
+#' comparison with other indirect methods. Computers and Electronics in
+#' Agriculture, 96, 67–74.
+#'
+#'   Macfarlane, C. (2011). Classification method of mixed pixels does not affect
+#' canopy metrics from digital images of forest overstorey. Agricultural and
+#' Forest Meteorology, 151(7), 833–840.
 #' @export
 LAI_from_gf_at_57 <- function(image_path,
                               camera_horiz_FOV = 73.7,
