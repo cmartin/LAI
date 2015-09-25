@@ -26,4 +26,8 @@ plotRGB(
 LAI_from_gf_at_57(test_image)
 ```
 
+## Problems : 
 Please report any bugs to the [GitHub issue tracker](https://github.com/cmartin/LAI/issues) and write any questions to <charles.martin1@uqtr.ca>
+
+## If this code is useful to you, please cite as : 
+Charles A. Martin (2015). LAI: Calculate indirect Leaf Area Index (LAI) from images. R package version 0.0.0.9002.
