@@ -33,10 +33,10 @@ LAI_from_gf_at_57 <- function(image_path,
                               camera_horiz_FOV = 73.7,
                               focal_angle = 45
                               ) {
-  LAI_from_GF(
+  .LAI_from_GF(
     gap_fraction(
       unimodal_threshold(
-        crop_around_angle(
+        .crop_around_angle(
           # only the blue band is necessary for calculations
           raster::raster(image_path, band = 3),
           camera_horiz_FOV = camera_horiz_FOV,
@@ -72,7 +72,7 @@ gap_fraction <- function(binary_img) {
 }
 
 #' Calculate LAI from a gap fraction (GF) ratio
-LAI_from_GF <- function(
+.LAI_from_GF <- function(
   GF,
   angle=57.5 # degrees
 ) {
@@ -86,7 +86,7 @@ LAI_from_GF <- function(
 }
 
 #' Crop a band at a particular angle from a raster image
-crop_around_angle <- function(
+.crop_around_angle <- function(
   img, # raster object
   camera_horiz_FOV, # degrees
   focal_angle, # degrees angle at which the camera was pointing (degrees)
