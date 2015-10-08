@@ -10,3 +10,5 @@ LazyData: true
 Imports: raster
 Suggests: testthat
 Date: 2015-09-25
+URL: https://github.com/cmartin/LAI
+BugReports: https://github.com/cmartin/LAI/issues
