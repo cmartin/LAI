@@ -104,6 +104,9 @@ gap_fraction <- function(binary_img) {
 
   crop_top_pixel <- (crop_top_angle - bottom_angle) * pixel_degree_ratio
   crop_bottom_pixel <- (crop_bottom_angle - bottom_angle) * pixel_degree_ratio
+  if ((crop_top_pixel < 0) | (crop_bottom_pixel < 0)) {
+    stop("Image does not include the 57 degrees band")
+  }
   e <- raster::extent(c(0,img@ncols,crop_bottom_pixel,crop_top_pixel) )
 
   return(raster::crop(img,e))

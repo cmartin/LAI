@@ -35,3 +35,13 @@ expect_that(
   ),
   equals(2.8, tolerance = .1)
 )
+
+context("Intelligent error messages")
+expect_error(
+  LAI_from_gf_at_57(
+    system.file("extdata", "IMG_0044.JPG", package = "LAI"),
+    camera_horiz_FOV = 10,
+    focal_angle = 45
+  ),
+  "Image does not include the 57 degrees band"
+)
