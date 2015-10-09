@@ -43,4 +43,7 @@ index using a smartphone. Trueness and precision determination and
 comparison with other indirect methods. Computers and Electronics in
 Agriculture, 96, 67-74.
 }
+\seealso{
+\code{\link{unimodal_threshold}} \code{\link{gap_fraction}}
+}
 

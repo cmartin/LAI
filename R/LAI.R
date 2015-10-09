@@ -28,6 +28,7 @@
 #' index using a smartphone. Trueness and precision determination and
 #' comparison with other indirect methods. Computers and Electronics in
 #' Agriculture, 96, 67-74.
+#' @seealso \code{\link{unimodal_threshold}} \code{\link{gap_fraction}}
 #' @export
 LAI_from_gf_at_57 <- function(image_path,
                               camera_horiz_FOV = 73.7,
@@ -59,6 +60,7 @@ LAI_from_gf_at_57 <- function(image_path,
 #'    raster(system.file("extdata", "IMG_0005.JPG", package = "LAI"), band = 3)
 #'  )
 #' )
+#' @seealso \code{\link{unimodal_threshold}} \code{\link{LAI_from_gf_at_57}}
 #' @export
 gap_fraction <- function(binary_img) {
   freqs <- as.data.frame(raster::freq(binary_img))

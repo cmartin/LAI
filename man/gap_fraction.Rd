@@ -24,4 +24,7 @@ gap_fraction(
  )
 )
 }
+\seealso{
+\code{\link{unimodal_threshold}} \code{\link{LAI_from_gf_at_57}}
+}
 

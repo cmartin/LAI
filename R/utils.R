@@ -27,6 +27,7 @@
 #' canopy metrics from digital images of forest overstorey. Agricultural and
 #' Forest Meteorology, 151(7), 833-840.
 #' @export
+#' @seealso \code{\link{gap_fraction}} \code{\link{LAI_from_gf_at_57}}
 unimodal_threshold <- function(img) {
   values <- raster::getValues(img)
 

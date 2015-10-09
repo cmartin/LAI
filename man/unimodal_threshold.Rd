@@ -39,4 +39,7 @@ Macfarlane, C. (2011). Classification method of mixed pixels does not affect
 canopy metrics from digital images of forest overstorey. Agricultural and
 Forest Meteorology, 151(7), 833-840.
 }
+\seealso{
+\code{\link{gap_fraction}} \code{\link{LAI_from_gf_at_57}}
+}
 
