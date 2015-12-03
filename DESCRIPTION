@@ -10,5 +10,5 @@ License: GPL-3
 LazyData: true
 Imports: raster
 Suggests: testthat
-URL: https://github.com/cmartin/LAI
+URL: https://github.com/cmartin/LAI. DOI:10.5281/zenodo.34690
 BugReports: https://github.com/cmartin/LAI/issues

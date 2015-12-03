@@ -34,8 +34,6 @@ Please report any bugs to the [GitHub issue tracker](https://github.com/cmartin/
 ## Citation
 If this code is useful to you, please cite as : 
 
-[![DOI](https://zenodo.org/badge/19481/cmartin/LAI.svg)](https://zenodo.org/badge/latestdoi/19481/cmartin/LAI)
-
 ```{r echo=FALSE, comment=NA}
 cat(citation("LAI")$textVersion)
 ```
