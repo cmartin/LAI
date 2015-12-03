@@ -11,21 +11,22 @@ library(devtools)
 devtools::install_github("cmartin/LAI")
 ```
 
+
 ## To try the code with one of the example images : 
 
 ```r
-library(LAI)
 library(raster)
+
 test_image <-  system.file("extdata", "IMG_7595.JPG", package = "LAI")
 
 # See the image
 plotRGB(
   brick(test_image),
-  asp=1
+  asp = 1
 )
 ```
 
-![](README_files/figure-html/unnamed-chunk-2-1.png) 
+![](README_files/figure-html/LAIExample-1.png) 
 
 ```r
 # Calculate LAI

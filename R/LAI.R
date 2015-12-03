@@ -12,10 +12,7 @@
 #' @param focal_angle Angle at which the camera was pointing (degrees). 0 is
 #' horizontal, 90 is vertical
 #' @return The calculated LAI value.
-#' @examples
-#' LAI_from_gf_at_57(
-#'   system.file("extdata", "IMG_7595.JPG", package = "LAI")
-#' )
+#' @example /inst/examples/LAI.Example.R
 #' @references
 #'   Baret, F., de Solan, B., Lopez-Lozano, R., Ma, K., & Weiss, M. (2010).
 #' GAI estimates of row crops from downward looking digital photos taken
@@ -53,13 +50,7 @@ LAI_from_gf_at_57 <- function(image_path,
 #' @param binary_img A binarized raster object, where sky pixels are 0 and
 #' vegetation pixels are 1
 #' @return The gap fraction ( number of sky pixels / total number of pixels )
-#' @examples
-#' library(raster)
-#' gap_fraction(
-#'  unimodal_threshold (
-#'    raster(system.file("extdata", "IMG_0005.JPG", package = "LAI"), band = 3)
-#'  )
-#' )
+#' @example /inst/examples/Gap.Example.R
 #' @seealso \code{\link{unimodal_threshold}} \code{\link{LAI_from_gf_at_57}}
 #' @export
 gap_fraction <- function(binary_img) {

@@ -16,21 +16,14 @@ The LAI value is computed from the gap fraction of a binarized vegetation image 
 library(devtools)
 devtools::install_github("cmartin/LAI")
 ```
+```{r echo=FALSE}
+library(LAI)
+library(knitr)
+read_chunk("inst/examples/LAI.Example.R")
+```
 
 ## To try the code with one of the example images : 
-```{r comment=NA, message=FALSE}
-library(LAI)
-library(raster)
-test_image <-  system.file("extdata", "IMG_7595.JPG", package = "LAI")
-
-# See the image
-plotRGB(
-  brick(test_image),
-  asp=1
-)
-
-# Calculate LAI
-LAI_from_gf_at_57(test_image)
+```{r LAIExample, comment=NA, message=FALSE}
 ```
 
 ## Problems : 

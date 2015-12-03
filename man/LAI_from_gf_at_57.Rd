@@ -26,9 +26,20 @@ band around a 57.5 degrees zenith angle (Baret et al. 2010). The
 calculated an indirect LAI value (e.g. Confalonieri et al. 2013).
 }
 \examples{
-LAI_from_gf_at_57(
-  system.file("extdata", "IMG_7595.JPG", package = "LAI")
+## @knitr LAIExample
+
+library(raster)
+
+test_image <-  system.file("extdata", "IMG_7595.JPG", package = "LAI")
+
+# See the image
+plotRGB(
+  brick(test_image),
+  asp = 1
 )
+
+# Calculate LAI
+LAI_from_gf_at_57(test_image)
 }
 \references{
 Baret, F., de Solan, B., Lopez-Lozano, R., Ma, K., & Weiss, M. (2010).
