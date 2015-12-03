@@ -1,5 +1,7 @@
 # LAI package for R
 
+[![DOI](https://zenodo.org/badge/19481/cmartin/LAI.svg)](https://zenodo.org/badge/latestdoi/19481/cmartin/LAI)
+
 This package calculates leaf area index (LAI) from digital images.
 
 The LAI value is computed from the gap fraction of a binarized vegetation image classified with the histogram-based unimdal threshold method.
@@ -42,6 +44,9 @@ Please report any bugs to the [GitHub issue tracker](https://github.com/cmartin/
 
 ## Citation
 If this code is useful to you, please cite as : 
+
+[![DOI](https://zenodo.org/badge/19481/cmartin/LAI.svg)](https://zenodo.org/badge/latestdoi/19481/cmartin/LAI)
+
 
 ```
 Charles A. Martin (2015). LAI: Calculate indirect Leaf Area Index (LAI) from images. R package version 0.0.0.9004. https://github.com/cmartin/LAI
