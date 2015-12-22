@@ -1,14 +1,19 @@
 Package: LAI
 Title: Calculate indirect Leaf Area Index (LAI) from images
-Version: 0.0.0.9004
-Date: 2015-12-03
+Version: 0.0.0.9005
+Date: 2015-12-11
 Authors@R: person(c("Charles", "A."), "Martin", email = "charles.martin1@uqtr.ca",
                   role = c("aut", "cre"))
-Description: This package calculates indirect leaf area index (LAI) from digital pictures of the vegetation.
-Depends: R (>= 3.0.2)
+Description: This package calculates indirect leaf area index (LAI) from digital
+    pictures of the vegetation.
+Depends:
+    R (>= 3.0.2)
 License: GPL-3
 LazyData: true
-Imports: raster, rgdal
-Suggests: testthat
+Imports:
+    raster
+Suggests:
+    testthat
 URL: https://github.com/cmartin/LAI. DOI:10.5281/zenodo.34690
 BugReports: https://github.com/cmartin/LAI/issues
+RoxygenNote: 5.0.1
