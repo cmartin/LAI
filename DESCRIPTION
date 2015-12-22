@@ -11,7 +11,7 @@ Depends:
 License: GPL-3
 LazyData: true
 Imports:
-    raster
+    raster,rgdal
 Suggests:
     testthat
 URL: https://github.com/cmartin/LAI. DOI:10.5281/zenodo.34690
