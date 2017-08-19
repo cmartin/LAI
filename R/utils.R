@@ -49,7 +49,7 @@ unimodal_threshold <- function(img) {
     range_R <- (DN_R1 + 1):(DN_R2 - 1)
     DN_max_R <- range_R[which.max(hst[hst$DN %in% range_R, "freq"])]
 
-    if (DN_max_R - DN_R1 >= 10) break;
+    if ((DN_max_R - DN_R1 >= 10) | (DN_R1 < 0)) break;
     DN_R1 <- DN_R1 - 25
   }
   if (DN_max_R < DN_max_L) {
